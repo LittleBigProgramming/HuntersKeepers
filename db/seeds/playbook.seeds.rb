@@ -111,7 +111,6 @@ I’ll kill them all. That’s all I have left.'
    name: 'The Searcher',
    description: 'There’s still so much to be discovered and
   explained, even now. Perhaps only one event in a thousand is
-<<<<<<< HEAD
   true weirdness — but I’ll investigate them all to find it.'
  }].each do |playbook|
   Playbook.find_or_initialize_by(name: playbook[:name]).update!(playbook)
