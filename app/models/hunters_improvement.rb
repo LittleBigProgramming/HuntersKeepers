@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Improvements taken by the Hunter	
+# Improvements taken by the Hunter
 # One is unlocked every 5 Experience
 # == Schema Information
 #

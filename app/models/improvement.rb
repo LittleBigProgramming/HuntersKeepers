@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Improvements are associated with Playbooks	
-# These are the options the Hunter can choose	
+# Improvements are associated with Playbooks
+# These are the options the Hunter can choose
 # from when upgrading their character.
 # == Schema Information
 #
