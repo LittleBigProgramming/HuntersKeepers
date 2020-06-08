@@ -18,7 +18,7 @@ class HuntersController < ApplicationController
   # @param :available_improvements [Boolean] Toggles whether or not to include a list of improvements available to
   #   the hunter
   # @see Hunter#available_improvements
-  # Available_gear contains all gear available to the Hunter's current playbook
+
   def show
     @available_improvements = params[:available_improvements]
   end
@@ -33,7 +33,7 @@ class HuntersController < ApplicationController
   # GET /hunters/1/edit
   #
   # @param id [Integer] id of the Hunter to be edited
-  # Available_gear contains all gear available to the Hunter's current playbook
+
   def edit; end
 
   # POST /hunters
