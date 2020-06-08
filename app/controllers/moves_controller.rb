@@ -2,21 +2,34 @@
 
 # Restful controller for Moves
 class MovesController < ApplicationController
-  before_action :set_move, only: %i[show edit update destroy]
+  before_action :set_move, only: %i[roll show edit update destroy]
 
   # GET /moves
   # GET /moves.json
   def index
     @moves = params[:basic] ? Moves::Basic.all : Move.all
     @moves = Move.with_hunter_moves(params[:hunter_id]) if params[:hunter_id]
-    @moves = @moves.where(playbook_id: params[:playbook_id]) if params[:playbook_id]
+    return unless params[:playbook_id]
+    @moves = @moves.where(playbook_id: params[:playbook_id])
   end
 
   # GET /moves/1
   # GET /moves/1.json
-  def show
+  def show; end
+
+  # GET /moves/1/roll
+  # GET /moves/1/roll.json
+  def roll
     hunter = Hunter.find_by(id: params[:hunter_id])
-    @results = @move.roll_results(hunter) if hunter
+    # TODO: raise complaint id unrollable
+    return unless hunter && @move.rollable?
+    roll_results = if params[:lucky]
+                     @move.lucky_roll(hunter, params[:lose_experience])
+                   else
+                     @move.roll_results(hunter)
+                   end
+    @results = roll_results.result
+    @roll = roll_results.roll
   end
 
   # GET /moves/new
