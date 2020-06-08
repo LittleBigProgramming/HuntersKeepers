@@ -134,4 +134,3 @@ end
 @hex = Playbook.find_by name: 'The Hex'
 @pararomantic = Playbook.find_by name: 'The Pararomantic'
 @searcher = Playbook.find_by name: 'The Searcher'
-@initiate = Playbook.find_by name: 'The Initiate'
