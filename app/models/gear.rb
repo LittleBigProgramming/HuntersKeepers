@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Gear is equipment that the Hunter can use.
 # == Schema Information
 #
 # Table name: gears
