@@ -93,7 +93,7 @@ after :playbook do
   ].each do |gear|
     tag_list = gear.delete(:tags)
     playbooks = gear.delete(:playbooks)
-    g = Gear.create!(gear)
+    g = Gear.find_or_initialize_by!(gear)
     g.tag_list = tag_list
     g.playbooks << playbooks
     g.save!
